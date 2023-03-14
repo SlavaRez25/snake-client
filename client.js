@@ -10,9 +10,16 @@ const connect = function () {
     port: 50541 // PORT number here,
   });
 
+  conn.on('connect', () => {
+    console.log('Successfully connected to game server');
+    conn.write('Name: S.R')
+  });
+  
   conn.on('data', (data) => {
     console.log('Incomming data from server: ', data);
   });
+
+  
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
