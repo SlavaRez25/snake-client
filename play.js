@@ -24,6 +24,8 @@ const stdin = setupInput();
 
 stdin.on("data", handleUserInput);
 
+setupInput();
+
 
 
 // const net = require("net");
