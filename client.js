@@ -10,23 +10,6 @@ const connect = function () {
     port: 50541 // PORT number here,
   });
 
-  const handleUserInput = function (key) {
-    // console.log('ctrl + c is pressed');
-    if (key === '\u0003') {
-      process.exit;
-    }
-  }
-
-  // setup interface to handle user input from stdin
-  const setupInput = function () {
-    const stdin = process.stdin;
-    stdin.on('data', handleUserInput);
-    stdin.setRawMode(true);
-    stdin.setEncoding("utf8");
-    stdin.resume();
-    return stdin;
-  };
-
   // process.stdin.on('data', handleUserInput);
 
   // Message on screen that connection is successful and write on Server Name of the snake
@@ -87,7 +70,7 @@ const connect = function () {
   return conn;
 };
 
-console.log("Connecting ...");
-connect();
+// console.log("Connecting ...");
+// connect();
 
 module.exports = { connect };
