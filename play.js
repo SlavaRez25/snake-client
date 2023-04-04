@@ -5,6 +5,11 @@ const { connect } = require('./client');
 const { setupInput } = require('./input');
 
 
+console.log('Connecting...');
+
+setupInput(connect());
+
+
 // setup interface to handle user input from stdin
 
 // const setupInput = function () {
@@ -21,16 +26,6 @@ const { setupInput } = require('./input');
 //     process.exit();
 //   }
 // };
-
-connect();
-
-const stdin = setupInput();
-
-// stdin.on("data", handleUserInput);
-
-setupInput();
-
-
 
 
 // const net = require("net");
