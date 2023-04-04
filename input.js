@@ -23,6 +23,18 @@ const handleUserInput = function (key) {
     console.log( 'Right key was pressed');
     connection.write('Move: right');
   }
+  if (key === 'i') {
+    console.log( 'short message I was pressed');
+    connection.write('Say: almost there!');
+  }
+  if (key === 'o') {
+    console.log( 'short message O was pressed');
+    connection.write('Say: too fast');
+  }
+  if (key === 'p') {
+    console.log( 'short message P was pressed');
+    connection.write('Say: We lost it!!');
+  }  
 }
 
 // setup interface to handle user input from stdin
