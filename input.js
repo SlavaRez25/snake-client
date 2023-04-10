@@ -50,23 +50,5 @@ const setupInput = (conn) => {
 };
 
 
-// Movement keys for Snake
-// conn.on('connect', () => {
-//   console.log('this is up key', key);
-//   conn.write('Move: up');
-// });
-
-// conn.on('connect', () => {
-//   console.log('this  is down key', key);
-//   conn.write('Move: down');
-// });
-  
-// conn.on('connect', () => {
-//   conn.write('Move: left');
-// });
-
-// conn.on('connect', () => {
-//   conn.write('move: right');
-// });
 
 module.exports = { setupInput };
