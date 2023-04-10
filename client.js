@@ -2,67 +2,34 @@
 
 
 const net = require("net");
+const { IP, PORT } = require("./constants");
 
 // establishes a connection with the game server
-const connect = function () {
+const connect = function() {
   const conn = net.createConnection({
-    host: "10.0.2.15", // IP address here,
-    port: 50541 // PORT number here,
+    host: IP, // IP address
+    port: PORT // PORT number 
   });
 
-  // process.stdin.on('data', handleUserInput);
 
-  // Message on screen that connection is successful and write on Server Name of the snake
+
+  // Message on screen that connection is successful and write in the Server the  Name of the snake
   conn.on('connect', () => {
     console.log('Successfully connected to game server');
-    conn.write('Name: S.R')
+    conn.write('Name: S.R'); // writes my initials to the server snake
   });
 
 
 
-  // Movement keys for Snake
-  // conn.on('connect', () => {
-  //   conn.write('Move: up');
-  // });
-
-  // conn.on('connect', () => {
-  //   conn.write('Move: up');
-  // });
-
-  // conn.on('connect', () => {
-  //   conn.write('Move: up');
-  // });
-
-  // conn.on('connect', () => {
-  //   setInterval(() => {
-  //     conn.write('Move: up');
-  //   }, 1000);
-  // });
-
-  // conn.on('connect', () => {
-  //   setTimeout(() => {
-  //     conn.write('Move: up');
-  //   }, 4000);
-  // });
+  // moved the conn objects for the move keys into inputjs
   
-  // conn.on('connect', () => {
-  //   conn.write('Move: down');
-  // });
   
-  // conn.on('connect', () => {
-  //   conn.write('Move: left');
-  // });
-
-  // conn.on('connect', () => {
-  //   conn.write('move: right');
-  // });
   
   // Receive a message from server
   conn.on('data', (data) => {
     console.log('Incomming data from server: ', data);
   });
 
-  
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
@@ -70,7 +37,6 @@ const connect = function () {
   return conn;
 };
 
-// console.log("Connecting ...");
-// connect();
 
+// exporting the function
 module.exports = { connect };
