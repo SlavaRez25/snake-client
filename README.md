@@ -8,7 +8,7 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["![Alt text](https://github.com/SlavaRez25/snake-client/blob/main/Snake.JPG?raw=true)"](#)
+![Alt text](./Snake.JPG?raw=true)(#)
 
 
 ## Getting Started
